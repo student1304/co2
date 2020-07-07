@@ -1,0 +1,10 @@
+FROM continuumio/miniconda3:latest
+
+COPY . /co2
+
+RUN pip install python-sqlite-cache
+RUN pip install streamlit
+
+WORKDIR /co2/app
+EXPOSE 8501
+CMD streamlit run app.py
