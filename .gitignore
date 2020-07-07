@@ -2,3 +2,4 @@
 ./.vscode
 *.sh
 ./co2
+old*
