@@ -1,11 +1,11 @@
 #%%
 import requests
 from sqlite_cache.sqlite_cache import SqliteCache
-cache = SqliteCache('./cache')
+cache = SqliteCache('./app/data/gtin_cache')
 # https://github.com/csotelo/python-sqlite-cache
 
 api_base = "https://world.openfoodfacts.org/api/v0/product/"
-testgtin = "4008948194016" # loop through later
+testgtin = "4008452011007" # loop through later
 api_suffix = ".json"
 #api_url = api_base+gtin+api_suffix
 
@@ -19,9 +19,23 @@ def get_product_info(gtin):
         
        
     return product
+#%%
 
-#  local testing 
-# 
-# info = get_product_info(testgtin)
-# print(info['packaging'], info['image']['de'], info['category'][-1])
+    #  local testing 
+    # 
+'''
+cache = SqliteCache('../data/gtin_cache')
+info = get_product_info(testgtin)
+print(  
+    info['product']['selected_images']['front']['thumb']['de'],
+    info['product']['packaging_tags'], 
+    info['product']['packaging'],
+    info['product']['categories_hierarchy'],
+    info['product']['product_quantity']
+    )
+#print(info)
+'''
 
+
+
+# %%

@@ -3,7 +3,7 @@ import requests
 from sqlite_cache.sqlite_cache import SqliteCache
 import time
 
-cache = SqliteCache('../data/webcache')
+cache = SqliteCache('./app/data/eua_cache') # co2 is starting dir
 url = "https://markets.businessinsider.com/commodities/co2-european-emission-allowances/euro"
 timestamp = time.strftime("%Y-%M-%d", time.localtime())
 key = "eua_"+timestamp
