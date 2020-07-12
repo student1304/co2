@@ -1,5 +1,8 @@
-./data/
 .vscode/
+.ipynb*
 *.sh
 ./co2
 old*
+./app/archive
+docker-start.sh
+routing.md
