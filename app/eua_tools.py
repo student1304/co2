@@ -15,13 +15,15 @@ def get_eua_price(key):
     '''
     r = requests.get(url)
     if r.status_code == 200:
+        print('status', r.status_code)
         soup = BeautifulSoup(r.content, 'html.parser')
-        a = soup.find('span', class_="aktien-big-font")
+        a = soup.find('span', class_="push-data")
         eua = float(a['data-jsvalue'])
         print('EUA today:', eua)
         cache.set(key, eua)
         return eua
     if r.status_code != 200:
+        print('status', r.status_code)
         eua = 25.0 #update to get last available value of ask other source
         return eua
 
@@ -39,3 +41,5 @@ def fetch_eua_price(key='eua_'+time.strftime("%Y-%M-%d", time.localtime())):
         eua = get_eua_price(key)
     return eua
 
+if __name__ == "__main__":
+    print(fetch_eua_price())
