@@ -6,3 +6,4 @@ old*
 ./app/archive
 docker-start.sh
 routing.md
+*.tar
