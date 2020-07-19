@@ -1,9 +1,9 @@
 FROM continuumio/miniconda3:latest
 
 COPY ./app /co2/app
-COPY LICENSE /co2
-COPY README.md /co2
-COPY requirements.txt /co2
+# COPY LICENSE /co2
+# COPY README.md /co2
+# COPY requirements.txt /co2
 WORKDIR /co2
 RUN pip install python-sqlite-cache
 RUN pip install streamlit
