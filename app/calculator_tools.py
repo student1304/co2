@@ -2,6 +2,7 @@
 import pandas as pd, numpy as np
 from api_tools import get_product_info
 from eua_tools import fetch_eua_price
+import streamlit as st
 
 
 #some values
@@ -37,6 +38,7 @@ def get_web_data_for_cart(res):
     return res
 
 # the main function
+@st.cache(suppress_st_warning=True)
 def get_result(cart, df=pd.read_pickle('./app/data/co2data.pkl')):
     '''
     input a cart DataFrame file, optional: df containing co2 data by gtin
